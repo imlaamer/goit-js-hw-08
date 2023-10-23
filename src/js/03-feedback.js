@@ -23,7 +23,11 @@ formEl.addEventListener('input', setObjectInStorageThrottled);
 function getObjAndReset(event) {
   event.preventDefault();
   const currentStorage = JSON.parse(localStorage.getItem(KEY_FORM));
-  console.log(currentStorage);
+  if (currentStorage !== null) {
+    if (currentStorage.email !== '') {
+      console.log(currentStorage);
+    }
+  }
   localStorage.removeItem(KEY_FORM);
   formEl.reset();
 }
