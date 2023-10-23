@@ -1,10 +1,8 @@
 import { galleryItems } from './gallery-items';
-
-// Описаний в документації
 import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 
+const galleryList = document.querySelector(".gallery");
 
 let markup = "";
 galleryItems.forEach(
@@ -15,9 +13,6 @@ galleryItems.forEach(
         </a>
       </li>`)
 );
-
-const galleryList = document.querySelector(".gallery");
-
 galleryList.innerHTML = markup;
 
 const lightbox = new SimpleLightbox(".gallery a", {
